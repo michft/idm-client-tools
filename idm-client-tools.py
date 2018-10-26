@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
-
-""" Example tasks using the lightweight FreeIPA JSON RPC client"""
-""" Uses Python Fire to generate a CLI for the ClientTools class """
-
-
+import sys
 import pprint
 import fire
 from python_freeipa import Client, exceptions
+
+
+""" Example tasks using the lightweight FreeIPA JSON RPC client"""
+""" Uses Python Fire to generate a CLI for the ClientTools class """
 
 
 client = Client("ipa.demo1.freeipa.org", version="2.215")
@@ -19,7 +19,8 @@ class ClientTools:
         try:
             user = client.user_show(uid)
             pp = pprint.pformat(user)
-            return pp
+            sys.stdout.write(pp)
+            sys.stdout.flush()
         except exceptions.NotFound:
             print("User {} not found.".format(uid))
             exit()
@@ -28,7 +29,8 @@ class ClientTools:
         try:
             user = client.user_status(uid)
             pp = pprint.pformat(user)
-            return pp
+            sys.stdout.write(pp)
+            sys.stdout.flush()
         except exceptions.NotFound:
             print("User {} not found.".format(uid))
             exit()
