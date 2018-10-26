@@ -36,5 +36,9 @@ class ClientTools:
             exit()
 
 
-if __name__ == "__main __":
+def main():
     fire.Fire(ClientTools)
+
+
+if __name__ == '__main__':
+    main()
