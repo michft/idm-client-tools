@@ -17,7 +17,7 @@ class ClientTools:
     def usershow(self, uid):
         try:
             user = client.user_show(uid)
-            pp = pprint.pprint(user)
+            pprint.pprint(user)
         except exceptions.NotFound:
             print("User {} not found.".format(uid))
             exit()
@@ -25,7 +25,7 @@ class ClientTools:
     def userstatus(self, uid):
         try:
             user = client.user_status(uid)
-            pp = pprint.pprint(user)
+            pprint.pprint(user)
         except exceptions.NotFound:
             print("User {} not found.".format(uid))
             exit()
