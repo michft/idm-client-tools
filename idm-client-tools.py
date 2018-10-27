@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import sys
 import pprint
 import fire
 from python_freeipa import Client, exceptions
