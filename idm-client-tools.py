@@ -30,6 +30,10 @@ class ClientTools:
             print("User {} not found.".format(uid))
             exit()
 
+    def userfind(self):
+        allusers = client.user_find()
+        pprint.pprint(allusers)
+
 
 def main():
     fire.Fire(ClientTools)
