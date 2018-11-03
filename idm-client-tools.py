@@ -31,8 +31,12 @@ class ClientTools:
             exit()
 
     def userfind(self):
+        userlist = []
         allusers = client.user_find()
-        pprint.pprint(allusers)
+        result = allusers.get('result')
+        for items in result:
+            userlist.extend(items.get('uid'))
+        print(userlist)
 
 
 def main():
